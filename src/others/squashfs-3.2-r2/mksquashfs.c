@@ -1830,7 +1830,7 @@ int progress_bar(long long current, long long max, int columns)
 	int spaces = columns - used - hashes;
 
 	if(!progress || columns - used < 0)
-		return;
+		return 0;
 
 	printf("\r[");
 
@@ -2381,6 +2381,7 @@ void scan2_freedir(struct directory *dir)
 	free(dir->buff);
 }
 
+int dir_scan2(squashfs_inode *inode, struct dir_info *dir_info);
 
 void dir_scan(squashfs_inode *inode, char *pathname, int (_readdir)(char *, char *, struct dir_info *))
 {
