@@ -1830,7 +1830,7 @@ int progress_bar(long long current, long long max, int columns)
 	int spaces = columns - used - hashes;
 
 	if(!progress || columns - used < 0)
-		return;
+		return 0;
 
 	printf("\r[");
 
