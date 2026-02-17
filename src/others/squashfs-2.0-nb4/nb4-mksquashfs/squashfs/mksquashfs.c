@@ -339,7 +339,7 @@ void restorefs()
 }
 
 
-void sighandler()
+void sighandler(int)
 {
 	if(interrupted == 1)
 		restorefs();

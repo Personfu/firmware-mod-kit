@@ -285,7 +285,7 @@ void restorefs()
 }
 
 
-void sighandler()
+void sighandler(int)
 {
 	if(interrupted == 1)
 		restorefs();
@@ -297,7 +297,7 @@ void sighandler()
 }
 
 
-void sighandler2()
+void sighandler2(int)
 {
 	EXIT_MKSQUASHFS();
 }
