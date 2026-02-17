@@ -404,7 +404,7 @@ class Magic(object):
         # Regex rule to find format strings
         self.fmtstr = re.compile("%[^%]")
         # Regex rule to find periods (see self._do_math)
-        self.period = re.compile("\.")
+        self.period = re.compile("\\.")
 
     def _filtered(self, text):
         '''
@@ -586,7 +586,7 @@ class Magic(object):
                 if line.operator:
                     try:
                         # If the operator value of this signature line is just an integer value, use it
-                        if isinstance(line.opvalue, int) or isinstance(line.opvalue, long):
+                        if isinstance(line.opvalue, int):
                             opval = line.opvalue
                         # Else, evaluate the complex expression
                         else:
